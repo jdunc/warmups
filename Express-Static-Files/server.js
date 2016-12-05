@@ -7,6 +7,7 @@ const path = require('path');
 
 app.use(express.static('public'));
 
+
 app.use((req, res) => {
   const filePath = path.join(__dirname, 'public', '404.html');
   res.sendFile(filePath);

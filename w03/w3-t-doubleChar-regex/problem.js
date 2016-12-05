@@ -13,18 +13,9 @@
 // DONE?? Do it with a RegEx! (a 2 line solution is possible)
 
 function doubleChar(str) {
-  if(typeof str !== "string"){
-    return "Ruh roh! That isn't a string!";
-  }else{
-    var newStr = [];
-    for (var i = 0; i < str.length; i++) {
-      var tempstr = str[i] + str[i];
-      newStr.push(tempstr);
-    }
-    var finalstr = newStr.join("");
-    console.log(finalstr);
-    return finalstr;
-  }
+var re = /<.*>/;
+console.log(str.replace(re, '$, $$'));
+return str.replace(re, '$, $$');
 }
 
 module.exports = {
