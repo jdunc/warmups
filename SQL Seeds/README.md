@@ -17,3 +17,18 @@ Using SQL, build a seed file for the following database tables.
 Remember to delete all the existing rows from each table before inserting new ones.
 
 Once you're satisfied, feel free to insert more rows to either table as you see fit.
+
+```SQL
+DELETE TABLE IF EXISTS parties;
+DELETE TABLE IF EXISTS guests;
+CREATE TABLE parties (
+  id integer serial primary key,
+  name string NOT NULL default '',
+  price integer NOT NULL default 0.00
+  );
+  CREATE TABLE guests (
+    id integer serial primary key,
+    concert_id integer NOT NULL REFERENCES parties.id ON DELETE CASCADE,
+    name string NOT NULL DEFAULT '',
+    age integer NOT NULL DEFAULT 0
+    )```
